@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vuejs App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vuejs App</title>
 </head>
+
 <body>
   <div id="app-root">
-    <h1> {{ sayHi("Sedra" , "Vue.js") }}</h1>
+    <!-- //from 1 to 7 : -->
+    <!-- <h1> {{ sayHi("Sedra" , "Vue.js") }}</h1>
     <h2> My name is {{ name }}</h2>
     <h3> My age is {{ age }}</h3>
-    <!-- <a v-bind:href = "link"> test</a> -->
+    <a v-bind:href = "link"> test</a>
     <h4> Events :</h4>
     <p> Number is {{ num }}</p>
     <button v-on:click="increase"> click me</button>
-    <a href="" @click.once="testme"> once click </a>
-  </div> 
-    
- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
- <script src="./script.js"></script>
+    <a href="" @click.once="testme"> once click </a> -->
+
+    <!-- //from 8 to  -->
+    <!-- <label for="textInp"> {{name}}</label>
+    <input type="text" name="textInp" id="textInp"  v-model = "name"> 
+      <label for="textInp_2"> {{city}}</label>
+    <input type="text" name="textInp_2" id="textInp_2"> 
+    <button @click="name = 'lemon'"> update </button> -->
+    <!-- v-model example (9) -->
+    <!-- <form action="" @submit.prevent = "sendInfo">
+      <label for="username"> Enter your name:</label>
+      <input type="text" v-model="newUser.name">
+      <br/>
+      <label for="email"> Enter your email:</label>
+      <input type="email" v-model="newUser.email">
+      <br/>
+      <label for="password"> Enter your password:</label>
+      <input type="password" v-model="newUser.password">
+      <br/>
+      <input type="submit">
+     </form> -->
+
+    <!-- 10 -->
+    <h2> Number one is : {{ numberOne }}</h2>
+    <h2> Number one  * 2 is : {{numberOneChange}}</h2>
+    <button @click="numberOne++">numberOne </button>
+    <h2> Number two is : {{ numberTwo }}</h2>
+    <h2> Number one  + 10 is : {{numberTwoChange}}</h2>
+    <button @click="numberTwo++">numberTwo </button>
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./script.js"></script>
 </body>
+
 </html>
