@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vuejs App</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -41,11 +42,68 @@
 
     <!-- 10 -->
     <h2> Number one is : {{ numberOne }}</h2>
-    <h2> Number one  * 2 is : {{numberOneChange}}</h2>
+    <h2> Number one * 2 is : {{numberOneChange}}</h2>
     <button @click="numberOne++">numberOne </button>
     <h2> Number two is : {{ numberTwo }}</h2>
-    <h2> Number one  + 10 is : {{numberTwoChange}}</h2>
+    <h2> Number one + 10 is : {{numberTwoChange}}</h2>
     <button @click="numberTwo++">numberTwo </button>
+
+    <!-- 11 -->
+    <h2 :class="myColor"> my title </h2>
+    <input type="text" v-model="myColor" />
+    <br />
+    <h3 :style="`font-size : ${font}px`"> the first time in vue.js</h3>
+    <input type="number" v-model="font" />
+
+    <!-- 12 -->
+    <h3> i am {{ name }} , my age is {{age}}</h3>
+    <p v-if="age < 30"> he is younger yhan 30!</p>
+    <p v-else-if="age == 30"> he is equal 30.</p>
+    <p v-else="age > 30 "> he is older than 30</p>
+    <button @click="age++"> increase age</button>
+    <!-- v-show -->
+    <h3> i am {{ name }} , my age is {{age}}</h3>
+    <p v-show="age < 30"> he is younger yhan 30!</p>
+    <p v-show="age == 30"> he is equal 30.</p>
+    <p v-show="age > 30 "> he is older than 30</p>
+    <button @click="age++"> increase age</button>
+
+    <!-- 13 -->
+    <h2 v-for="student in students" :key="student.id">
+      <p>student number : {{student.id}}</p>
+      <p>student name : {{student.name}}</p>
+      <p>student age : {{student.age}}</p>
+      <hr />
+    </h2>
+    <h1 style="text-align: center;">Products</h1>
+    <div class="container">
+
+      <div class="card" v-for="item in Products" :key="Products.id">
+        <img :src="item.image" alt="">
+        <h2 class="title">{{item.title}}</h2>
+        <p class="desc"> {{item.descrption}}</p>
+        <p class="brand"> {{item.brand}}</p>
+        <div class="colors">
+          <span v-for=" color in item.colors" :style="`background:${color}`"></span>
+        </div>
+        <p class="price">{{item.price}}</p>
+      </div>
+    </div>
+    <div>
+      <my_component></my_component>
+    </div>
+  </div>
+  <div id="app-root-2">
+    <h1 style="text-align: center;">Students</h1>
+    <p v-for="(name , i ) in students" :key="i">{{name}}</p>
+
+    <input type="text" ref="myInp">
+    <p ref="my title"> my age is {{age}} </p>
+    <button @click="checkRefs"> click me</button>
+
+    <div>
+      <my_component></my_component>
+    </div>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
